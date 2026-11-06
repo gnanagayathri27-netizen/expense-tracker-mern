@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API = "http://localhost:5000/api/expenses";
+const API = `${import.meta.env.VITE_API_URL || "https://expense-tracker-backend-hb5s.onrender.com"}/api/expenses`;
 
 function App() {
   const [expenses, setExpenses] = useState([]);
