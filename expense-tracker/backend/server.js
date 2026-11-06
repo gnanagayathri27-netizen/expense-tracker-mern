@@ -13,7 +13,7 @@ app.use(cors({
 app.use(express.json());
 
 // Connect MongoDB
-const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://gnanagayathri27_db_user:LQcGzr5jKRZatMKD@cluster0.ap4hd1f.mongodb.net/expenseTracker?retryWrites=true&w=majority";
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://gnanagayathri27_db_user:ExpenseApp2024@cluster0.ap4hd1f.mongodb.net/expenseTracker?retryWrites=true&w=majority";
 mongoose.connect(MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
