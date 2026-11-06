@@ -13,8 +13,12 @@ app.use(cors({
 app.use(express.json());
 
 // Connect MongoDB
-const MONGO_URI = process.env.MONGO_URI || "mongodb://gnanagayathri27_db_user:ExpenseApp2024@ac-rzsv5ra-shard-00-00.ap4hd1f.mongodb.net:27017,ac-rzsv5ra-shard-00-01.ap4hd1f.mongodb.net:27017,ac-rzsv5ra-shard-00-02.ap4hd1f.mongodb.net:27017/expenseTracker?ssl=true&replicaSet=atlas-kpyfrz-shard-0&authSource=admin";
-mongoose.connect(MONGO_URI)
+const MONGO_URI = process.env.MONGO_URI || "mongodb+srv://gnanagayathri27_db_user:ExpenseApp2024@cluster0.ap4hd1f.mongodb.net/expenseTracker?retryWrites=true&w=majority&appName=Cluster0";
+mongoose.connect(MONGO_URI, {
+    serverSelectionTimeoutMS: 30000,
+    socketTimeoutMS: 45000,
+    connectTimeoutMS: 30000
+})
     .then(() => console.log("MongoDB Connected"))
     .catch(err => console.log(err));
 
